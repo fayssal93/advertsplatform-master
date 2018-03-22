@@ -1,0 +1,63 @@
+{% extends "JOMANELPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  {{'category.index.1'|trans}}  - {{ parent() }}  
+{% endblock %}
+
+{% block jomanelplatform_body %}
+
+  <h2>{{'category.index.2'|trans}}</h2>
+
+  {% if nbPages == null %}
+    <li>{{'category.index.3'|trans}}.</li> {#Pas encore de catégorie#}
+
+  {% else %}
+    <ul>
+      {% for category in listCategories %}
+        
+        <li>
+          
+          <a href="{{ path('jomanel_platform_viewListAdvsOfCategory', {'id': category.id}) }}">
+            
+            {% if app.request.locale == 'fr' %}
+
+              {{ category.name_fr }}
+
+            {% else %}
+
+              {{ category.name_en }}
+
+            {% endif %}
+            
+          </a>
+
+        </li>
+
+      {% else %}
+        
+        <li>{{'category.index.3'|trans}}.</li>{#Pas encore de catégorie#}
+
+      {% endfor %}
+    </ul>
+
+    {#<ul class="pagination">
+     On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b
+    {% for p in range(1, nbPages) %}
+      <li{% if p == page %} class="active"{% endif %}>
+        <a href="{{ path('jomanel_platform_homeCategory', {'page': p}) }}">{{ p }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    #}
+
+  {% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+
+

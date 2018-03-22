@@ -1,0 +1,25 @@
+{% extends "JOMANELPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  {{'edit.1'|trans}} - {{ parent() }}{#Modifier une annonce#}
+{% endblock %}
+
+{% block jomanelplatform_body %}
+
+  <h2>{{'edit.2'|trans}}</h2>{#Modifier une annonce#}
+
+  {{ include("JOMANELPlatformBundle:Advert:form.html.twig") }}
+
+  <p>
+    {% trans %}edit.3{% endtrans %}.{#Vous éditez une annonce déjà existante, merci de ne pas changer
+    l'esprit général de l'annonce déjà publiée#}
+  </p>
+
+  <p>
+    <a href="{{ path('jomanel_platform_view', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      {{'edit.4'|trans}}{#Retour à l'annonce#}
+    </a>
+  </p>
+
+{% endblock %}

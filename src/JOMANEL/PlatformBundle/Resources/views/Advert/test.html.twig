@@ -1,0 +1,32 @@
+{#
+    <div class="row">
+     
+        {{ form_start(form) }}
+     
+        {{ form_widget(form) }}
+     
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+            
+        {{ form_end(form) }}
+     
+    </div>
+#}
+
+<ul class="nav nav-pills nav-stacked">
+  {% for category in listCategories %}
+    <li>
+      
+        {#
+        {% set columnName = 'name' ~ app.request.getLocale() %}
+        
+        {{ category.columnName }}
+        #}
+        {{ category }}
+      
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,18 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+
+    <br>
+
+    <a class="btn btn-primary" href="{{ path('jomanel_core_homepage') }}">
+	    <button type="submit"  class="btn btn-primary">
+	    	{{ 'form.register_confirmed_GoToHomePage'|trans }} 
+	    </button>
+	</a>
+{% endblock fos_user_content %}

@@ -1,0 +1,15 @@
+
+{% extends "JOMANELPlatformBundle::layout.html.twig" %}
+
+{% block body %}
+
+  <h2>{{'add.1'|trans}}</h2>{# Ajouter une annonce #}
+
+  {{ include("JOMANELPlatformBundle:Advert:form.html.twig") }}
+
+  <p>
+    {{'add.2'|trans}}.{#Attention : cette annonce sera ajoutée directement
+    						  sur la page d'accueil après validation du formulaire#}
+  </p>
+
+{% endblock %}

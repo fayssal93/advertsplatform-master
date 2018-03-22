@@ -1,0 +1,40 @@
+#########################################General roots#########################################
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: jomanel_core_homepage
+        permanent: true
+
+jomanel_core:
+    resource: "@JOMANELCoreBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr # les locales disponibles, séparées par des pipes « | » 
+
+jomanel_platform:
+    resource: "@JOMANELPlatformBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/platform
+    requirements:
+        _locale: en|fr # les locales disponibles, séparées par des pipes « | »
+
+#########################################FOSUserBundle#########################################
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /{_locale}
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /{_locale}/profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /{_locale}/register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /{_locale}/resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /{_locale}/profile

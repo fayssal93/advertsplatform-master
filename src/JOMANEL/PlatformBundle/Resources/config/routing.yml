@@ -1,0 +1,121 @@
+jomanel_platform_home:
+    path:      /{page}
+    defaults: 
+        _controller: JOMANELPlatformBundle:Advert:index 
+        page:        1
+    requirements :
+        page: \d*
+
+
+jomanel_platform_view:
+    path:      /advert/{id}
+    defaults: 
+        _controller: JOMANELPlatformBundle:Advert:view 
+    requirements:
+        id: \d+
+
+    
+jomanel_platform_add:
+    path:      /admin/add
+    defaults: { _controller: JOMANELPlatformBundle:Advert:add }
+
+
+jomanel_platform_edit:
+    path:      /admin/edit/{id}
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:edit
+    requirements:
+        id: \d+
+
+
+jomanel_platform_delete:
+    path:      /admin/delete/{id}
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:delete
+    requirements:
+        id: \d+
+
+jomanel_platform_apply:
+    path:      /apply/{id}
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:apply
+    requirements:
+        id: \d+
+
+jomanel_platform_purge:
+    path:      /admin/purge 
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:purge
+ 
+jomanel_platform_removeapp:
+    path:      /removeapp
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:removeapp
+
+
+####################Category####################
+
+jomanel_platform_homeCategory: #homecategory listCategory
+    path:      /admin/listcategory/{page}
+    defaults: 
+        _controller: JOMANELPlatformBundle:Category:index 
+        page:        1
+    requirements :
+        page: \d*
+
+
+jomanel_platform_viewCategory:
+    path:      /admin/category/{id}
+    defaults: 
+        _controller: JOMANELPlatformBundle:Category:view 
+    requirements:
+        id: \d+
+
+
+jomanel_platform_addCategory:
+    path:      /admin/category/add
+    defaults:
+        _controller: JOMANELPlatformBundle:Category:add
+
+
+jomanel_platform_findAdverts:
+    path:      /category/findadverts/{page}
+    defaults:
+        _controller: JOMANELPlatformBundle:Category:findAdverts
+        page:        1
+    requirements :
+        page: \d*
+#
+jomanel_platform_viewListAdvsOfCategory:
+    path:      /category/{id}
+    defaults: 
+        _controller: JOMANELPlatformBundle:Category:viewListAdvsOfCategory 
+    requirements:
+        id: \d+
+#
+
+jomanel_platform_editCategory:
+    path:      /admin/category/edit/{id}
+    defaults:
+        _controller: JOMANELPlatformBundle:Category:edit
+    requirements:
+        id: \d+
+
+
+jomanel_platform_deleteCategory:
+    path:      /admin/category/deleteCategory/{id}
+    defaults:
+        _controller: JOMANELPlatformBundle:Category:delete
+    requirements:
+        id: \d+
+
+
+####################test####################
+jomanel_platform_test:
+    path:      /test
+    defaults:
+        _controller: JOMANELPlatformBundle:Advert:test
+
+
+
+

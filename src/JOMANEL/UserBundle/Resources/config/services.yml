@@ -1,0 +1,8 @@
+services:
+    
+    jomanel_user.doctrine_listener.user:
+        class: JOMANEL\UserBundle\DoctrineListener\UserListener #ApplicationCreationListener 
+        arguments:
+            - "@jomanel_platform.email" #, "@jomanel_platform.validator.antiflood"
+        tags:
+            - { name: doctrine.event_listener, event: PrePersist }
